@@ -46,7 +46,7 @@ lin-Autoupdater update
 
 ### Ignore Packages  
 
-To ignore packages, add the name of the package in the list of the [./src/config/ignore-list.json](https//github.com/douxxu/lin-autoupdater/blob/main/src/config/ignore-list.json) file.
+To ignore packages, add the name of the package in the list of the [./src/config/ignore-list.json](/src/config/ignore-list.json) file.
 
 ---
 ## 🛠 Dependencies
