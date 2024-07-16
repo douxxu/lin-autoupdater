@@ -1,6 +1,6 @@
 {
     "name": "lin-autoupdater",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Automatic package updater for Linux systems.",
     "main": "index.js",
     "scripts": {
