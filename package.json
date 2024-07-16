@@ -1,0 +1,45 @@
+{
+    "name": "lin-autoupdater",
+    "version": "1.0.0",
+    "description": "Automatic package updater for Linux systems.",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "bin" : {
+        "lin-autoupdater": "./src/index.js"
+    },
+    "keywords": [
+      "linux",
+      "autoupdater",
+      "package-manager",
+      "systemd",
+      "update",
+      "apt",
+      "apt-get",
+      "brew",
+      "dnf",
+      "flatpak",
+      "gem",
+      "npm",
+      "pacman",
+      "pip",
+      "snap"
+    ],
+    "author": "Douxx",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/douxxu/Lin-Autoupdater.git"
+    },
+    "bugs": {
+      "url": "https://github.com/douxxu/Lin-Autoupdater/issues"
+    },
+    "homepage": "https://github.com/douxxu/Lin-Autoupdater",
+    "dependencies": {
+      "child_process": "*",
+      "fs-extra": "*",
+      "colors": "*"
+    }
+  }
+  
