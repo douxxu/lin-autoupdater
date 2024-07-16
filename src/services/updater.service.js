@@ -4,18 +4,18 @@ const path = require('path');
 const packageManagers = require('./package-managers');
 const c = require('colors');
 
-const serviceFilePath = '/etc/systemd/system/deb-autoupdater.service'; 
+const serviceFilePath = '/etc/systemd/system/lin-autoupdater.service'; 
 
 function enableService() {
 
     const serviceContent = `
     [Unit]
     Description=Linux Auto Updater - https://github.com/douxxu/Lin-autoupdater
-
+    
     [Service]
-    ExecStart=node ${process.cwd()}/src/index.js update
+    ExecStart=node ${path.join(__dirname, '..', 'index.js')} update
     Restart=always
-
+    
     [Install]
     WantedBy=multi-user.target
     `;
@@ -27,7 +27,7 @@ function enableService() {
             console.error('[ ', c.red('ERR'), ' ]', c.grey(`Error reloading systemd: ${err}`));
         } else {
             console.log('[ ', c.green('OK'), ' ]', c.grey('Systemd daemon reloaded.'));
-            exec('systemctl enable deb-autoupdater', (err) => {
+            exec('systemctl enable lin-autoupdater', (err) => {
                 if (err) {
                     console.error('[ ', c.red('ERR'), ' ]', c.grey(`Error enabling service: ${err}`));
                 } else {
@@ -40,12 +40,12 @@ function enableService() {
 
 function disableService() {
 
-    exec('systemctl disable deb-autoupdater', (err) => {
+    exec(`systemctl disable lin-autoupdater && rm ${serviceFilePath}`, (err) => {
         if (err) {
             console.error('[ ', c.red('ERR'), ' ]', c.grey(`Error disabling service: ${err}`));
         } else {
             fs.removeSync(serviceFilePath);
-            console.log('[ ', c.green('OK'), ' ]', c.grey('Auto-update service disabled.)'));
+            console.log('[ ', c.green('OK'), ' ]', c.grey('Auto-update service disabled.'));
         }
     });
 }
