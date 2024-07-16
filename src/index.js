@@ -5,7 +5,7 @@ const args = process.argv.slice(2);
 
 if (args.length === 0) {
     showInfoOnStart();
-    console.log('[ ', c.red('ERR'), ' ]', c.grey('No command provided. Use enable, disable, notify, or update.'));
+    console.log('[ ', c.red('ERR'), ' ]', c.grey('No command provided. Use enable, disable, or update.'));
     process.exit(1);
 }
 
@@ -25,6 +25,6 @@ switch (command) {
         updatePackages();
         break;
     default:
-        console.log('[ ', c.red('ERR'), ' ]', c.grey('Unknown command. Use enable, disable, notify, or update.'));
+        console.log('[ ', c.red('ERR'), ' ]', c.grey('Unknown command. Use enable, disable, or update.'));
         break;
 }
