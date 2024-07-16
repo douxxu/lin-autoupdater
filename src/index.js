@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { enableService, disableService, updatePackages, showInfoOnStart } = require('./services/updater.service');
 const c = require('colors');
 
